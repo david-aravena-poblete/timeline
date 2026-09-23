@@ -20,12 +20,14 @@
 
 /* ===== Gallery Column ===== */
 .era-content__gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
 .era-content__image-wrapper {
+  flex: 1 1 calc(50% - 6px);
+  min-width: 140px;
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -34,6 +36,10 @@
   transition:
     transform var(--transition-smooth),
     box-shadow var(--transition-smooth);
+}
+
+.era-content__gallery[data-count="1"] .era-content__image-wrapper {
+  flex: 1 1 100%;
 }
 
 .era-content__image-wrapper:hover {

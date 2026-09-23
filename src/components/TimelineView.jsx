@@ -22,7 +22,7 @@ function TimelineView() {
       {/* Hero / Header */}
       <header className="timeline-view__hero">
         <h1 className="timeline-view__title">Historia de David Aravena</h1>
-        <p className="timeline-view__subtitle">Un recorrido por los momentos que definen una vida</p>
+        <p className="timeline-view__subtitle"></p>
       </header>
 
       {/* Slider Section */}

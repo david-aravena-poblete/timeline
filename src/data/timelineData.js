@@ -1,9 +1,9 @@
 const timelineData = [
   {
-    year: 2010,
-    title: "Los Primeros Pasos",
+    year: 2009,
+    title: "Mis inicios como comunicador audiovisual",
     content:
-      "El año 2010 marcó el inicio de una gran aventura. Fueron tiempos de descubrimiento, de explorar el mundo con ojos curiosos y de construir las bases de lo que vendría después. Cada día traía una nueva lección, cada experiencia era una semilla plantada para el futuro. Los recuerdos de esos días están llenos de risas, juegos y la inocencia de quien apenas comienza a entender el mundo que lo rodea.",
+      "Los softwares de post produccion after effects, premiere, photoshop y cinema 4d eran mi dia a dia. Estudie en el instituto Santo Tomas de Talca, trabaje en canales de television comunal como editor, camarografo y post productor. Tambien fui freelance audiovisual.",
     images: [
       "https://picsum.photos/seed/da2010a/400/300",
       "https://picsum.photos/seed/da2010b/400/300",
@@ -12,10 +12,22 @@ const timelineData = [
     ],
   },
   {
-    year: 2012,
-    title: "Años de Aprendizaje",
+    year: 2014,
+    title: "El sueño de trabajar en cine de verdad",
     content:
-      "En el 2012, la escuela se convirtió en el centro de todo. Aprender a leer, escribir y descubrir las matemáticas abrió puertas inimaginables. Los amigos de esos años se convirtieron en compañeros de vida. Fue una época de crecimiento constante, donde cada libro leído y cada problema resuelto fortalecían la confianza y la curiosidad por saber más.",
+      "Despues de 2 semanas grabando procesos mineros en una mina de santiago, pude entrar al equipo de post produccion de una pelicula. El director Elias Llanos necesitaba correccion de color y post produccion para su pelicula de la isla de pascua.",
+    images: [
+      "https://picsum.photos/seed/da2012a/400/300",
+      "https://picsum.photos/seed/da2012b/400/300",
+      "https://picsum.photos/seed/da2012c/400/300",
+      "https://picsum.photos/seed/da2012d/400/300",
+    ],
+  },
+   {
+    year: 2015,
+    title: "Mis inicios en la publicidad",
+    content:
+      "Trabajar en cine hace que se abran puertas en publicidad. Motion graphics y post produccion para publicidad",
     images: [
       "https://picsum.photos/seed/da2012a/400/300",
       "https://picsum.photos/seed/da2012b/400/300",
@@ -24,89 +36,26 @@ const timelineData = [
     ],
   },
   {
-    year: 2014,
-    title: "Descubriendo Pasiones",
+    year: 2021,
+    title: "Punto de no retorno",
     content:
-      "El 2014 trajo consigo la adolescencia y con ella, la búsqueda de identidad. Fue el año de descubrir la tecnología como pasión, de pasar horas frente a la computadora explorando cómo funcionaban las cosas. Los videojuegos ya no eran solo entretenimiento, sino una ventana a un mundo de posibilidades creativas y técnicas que definirían el camino profesional.",
+      "El año 2021 es el punto de no retorno. En la informatica se veian cosas muy interesantes de las que desde hace mucho tiempo se venia hablando. Yo queria ser parte de todo eso. Abandone 10 años de experiencia como audiovisual por entender todo lo que se venia.",
     images: [
-      "https://picsum.photos/seed/da2014a/400/300",
-      "https://picsum.photos/seed/da2014b/400/300",
-      "https://picsum.photos/seed/da2014c/400/300",
-      "https://picsum.photos/seed/da2014d/400/300",
-    ],
-  },
-  {
-    year: 2016,
-    title: "Nuevos Horizontes",
-    content:
-      "Con el 2016 llegaron nuevos desafíos. La preparatoria abrió un abanico de oportunidades y la primera línea de código escrita cambió todo para siempre. Entender que se podía crear algo de la nada, que las ideas podían tomar forma digital, fue una revelación. Los proyectos escolares se transformaron en excusas para experimentar con la programación.",
-    images: [
-      "https://picsum.photos/seed/da2016a/400/300",
-      "https://picsum.photos/seed/da2016b/400/300",
-      "https://picsum.photos/seed/da2016c/400/300",
-      "https://picsum.photos/seed/da2016d/400/300",
-    ],
-  },
-  {
-    year: 2018,
-    title: "La Gran Decisión",
-    content:
-      "En el 2018, tomé la decisión que cambiaría el curso de mi carrera. Elegir estudiar ingeniería en sistemas fue apostar por la pasión sobre la comodidad. Los primeros semestres fueron intensos: algoritmos, estructuras de datos y noches de estudio que forjaron disciplina. Cada desafío superado confirmaba que el camino elegido era el correcto.",
-    images: [
-      "https://picsum.photos/seed/da2018a/400/300",
-      "https://picsum.photos/seed/da2018b/400/300",
-      "https://picsum.photos/seed/da2018c/400/300",
-      "https://picsum.photos/seed/da2018d/400/300",
-    ],
-  },
-  {
-    year: 2020,
-    title: "Reinvención en Pandemia",
-    content:
-      "El 2020 nos cambió a todos. La pandemia obligó a reinventarse, pero también abrió la puerta al aprendizaje remoto y al autodidactismo digital. Fue el año de los cursos en línea, de aprender React, Node.js y descubrir el mundo del desarrollo web moderno. Lo que parecía un obstáculo se convirtió en la mayor oportunidad de crecimiento profesional.",
-    images: [
-      "https://picsum.photos/seed/da2020a/400/300",
-      "https://picsum.photos/seed/da2020b/400/300",
-      "https://picsum.photos/seed/da2020c/400/300",
-      "https://picsum.photos/seed/da2020d/400/300",
-    ],
-  },
-  {
-    year: 2022,
-    title: "Primeros Proyectos Reales",
-    content:
-      "El 2022 fue el año de pasar de la teoría a la práctica. Los primeros proyectos freelance, las primeras colaboraciones en equipo y la satisfacción de ver código propio funcionando en producción. Aprender a trabajar con clientes, manejar deadlines y entregar calidad se convirtió en la nueva escuela. Cada proyecto completado era un escalón más hacia la profesionalización.",
-    images: [
-      "https://picsum.photos/seed/da2022a/400/300",
-      "https://picsum.photos/seed/da2022b/400/300",
-      "https://picsum.photos/seed/da2022c/400/300",
-      "https://picsum.photos/seed/da2022d/400/300",
-    ],
-  },
-  {
-    year: 2024,
-    title: "Consolidación Profesional",
-    content:
-      "Para el 2024, el camino recorrido comenzó a dar frutos. La experiencia acumulada permitió abordar proyectos más ambiciosos, liderar equipos pequeños y mentorear a quienes recién comenzaban. La inteligencia artificial y las nuevas tecnologías se integraron al flujo de trabajo diario, ampliando las posibilidades creativas y la eficiencia en cada entrega.",
-    images: [
-      "https://picsum.photos/seed/da2024a/400/300",
-      "https://picsum.photos/seed/da2024b/400/300",
-      "https://picsum.photos/seed/da2024c/400/300",
-      "https://picsum.photos/seed/da2024d/400/300",
+      "https://picsum.photos/seed/da2012a/400/300",
+      "https://picsum.photos/seed/da2012b/400/300",
+      "https://picsum.photos/seed/da2012c/400/300",
+      "https://picsum.photos/seed/da2012d/400/300",
     ],
   },
   {
     year: 2026,
-    title: "El Presente y el Futuro",
+    title: "En la actualidad",
     content:
-      "Hoy, en el 2026, miro hacia atrás con gratitud y hacia adelante con entusiasmo. Cada año vivido ha sido un capítulo esencial de esta historia. Los proyectos actuales combinan creatividad, tecnología de vanguardia e inteligencia artificial. El futuro es un lienzo en blanco lleno de posibilidades, y la aventura apenas comienza.",
+      "En la actualidad Tengo 3 bootcamps realizados para formarme como frontend developer. 1 año de experiencia profesional en desarrollo web. Adaptacion continua a la inteligencia artificial especializandome en el desarrollo y organizacion de contexto. La ia es el nuevo norte. Yo ya estoy arriba. Soy un frontend potenciado con inteligencia artificial",
     images: [
-      "https://picsum.photos/seed/da2026a/400/300",
-      "https://picsum.photos/seed/da2026b/400/300",
-      "https://picsum.photos/seed/da2026c/400/300",
-      "https://picsum.photos/seed/da2026d/400/300",
+      "/davidaravena.png",
     ],
-  },
+  }
 ];
 
 export default timelineData;

@@ -19,7 +19,12 @@ function EraContent({ datosEpoca }) {
   return (
     <div className="era-content" key={datosEpoca.year}>
       {/* Columna Izquierda: Galería de fotos */}
-      <div className="era-content__gallery" role="group" aria-label={`Galería de fotos del año ${datosEpoca.year}`}>
+      <div 
+        className="era-content__gallery" 
+        role="group" 
+        aria-label={`Galería de fotos del año ${datosEpoca.year}`}
+        data-count={datosEpoca.images?.length || 0}
+      >
         {datosEpoca.images.map((imagenUrl, indice) => (
           <div className="era-content__image-wrapper" key={indice}>
             <img

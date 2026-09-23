@@ -1,13 +1,14 @@
 import './TimelineSlider.css';
 
 function TimelineSlider({ years, selectedYear, onYearChange }) {
-  const minYear = years[0];
-  const maxYear = years[years.length - 1];
-  const step = years.length > 1 ? years[1] - years[0] : 1;
+  // Usamos el índice del array como valor del range para soportar
+  // años con espaciado irregular (ej: 2009, 2012, 2014, 2015, 2021, 2026)
+  const selectedIndex = years.indexOf(selectedYear);
+  const currentIndex = selectedIndex >= 0 ? selectedIndex : 0;
 
   function handleYearChange(evento) {
-    const nuevoAnio = parseInt(evento.target.value, 10);
-    onYearChange(nuevoAnio);
+    const nuevoIndice = parseInt(evento.target.value, 10);
+    onYearChange(years[nuevoIndice]);
   }
 
   function handleYearClick(year) {
@@ -21,14 +22,14 @@ function TimelineSlider({ years, selectedYear, onYearChange }) {
           id="timeline-range"
           type="range"
           className="timeline-slider__range"
-          min={minYear}
-          max={maxYear}
-          step={step}
-          value={selectedYear}
+          min={0}
+          max={years.length - 1}
+          step={1}
+          value={currentIndex}
           onChange={handleYearChange}
           aria-label="Seleccionar año del timeline"
-          aria-valuemin={minYear}
-          aria-valuemax={maxYear}
+          aria-valuemin={years[0]}
+          aria-valuemax={years[years.length - 1]}
           aria-valuenow={selectedYear}
           aria-valuetext={`Año ${selectedYear}`}
         />
