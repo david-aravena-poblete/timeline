@@ -1,0 +1,159 @@
+/* ===== Timeline View Layout ===== */
+.timeline-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Hero / Header Area ===== */
+.timeline-view__hero {
+  position: relative;
+  padding: 50px 0 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.timeline-view__hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(184, 149, 106, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.timeline-view__title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.timeline-view__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ===== Slider Section ===== */
+.timeline-view__slider-section {
+  padding: 10px 0 40px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== Content Section ===== */
+.timeline-view__content-section {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px 50px;
+  flex: 1;
+}
+
+/* ===== Year Badge ===== */
+.timeline-view__year-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 8px 20px;
+  background: var(--color-text-primary);
+  color: var(--color-bg-light);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-medium);
+  transition: transform var(--transition-spring);
+}
+
+.timeline-view__year-badge:hover {
+  transform: scale(1.04);
+}
+
+.timeline-view__year-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ===== Decorative Sparkle ===== */
+.timeline-view__sparkle {
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.18;
+  pointer-events: none;
+  animation: sparkle-rotate 8s linear infinite;
+}
+
+.timeline-view__sparkle svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-accent);
+}
+
+@keyframes sparkle-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .timeline-view__hero {
+    padding: 35px 0 20px;
+  }
+
+  .timeline-view__title {
+    font-size: 1.8rem;
+  }
+
+  .timeline-view__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .timeline-view__slider-section {
+    padding: 10px 20px 30px;
+  }
+
+  .timeline-view__content-section {
+    padding: 0 20px 40px;
+  }
+
+  .timeline-view__sparkle {
+    bottom: 60px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-view__title {
+    font-size: 1.5rem;
+  }
+
+  .timeline-view__year-badge {
+    font-size: 0.95rem;
+    padding: 6px 16px;
+  }
+}
