@@ -5,10 +5,10 @@ const timelineData = [
     content:
       "Los softwares de post produccion after effects, premiere, photoshop y cinema 4d eran mi dia a dia. Estudie en el instituto Santo Tomas de Talca, trabaje en canales de television comunal como editor, camarografo y post productor. Tambien fui freelance audiovisual.",
     images: [
-      "https://picsum.photos/seed/da2010a/400/300",
-      "https://picsum.photos/seed/da2010b/400/300",
-      "https://picsum.photos/seed/da2010c/400/300",
-      "https://picsum.photos/seed/da2010d/400/300",
+      "/aftereffectslogo.png",
+      "/premierelogo.png",
+      "/photoshoplogo.png",
+      "/cinema4dlogo.png",
     ],
   },
   {
@@ -17,10 +17,8 @@ const timelineData = [
     content:
       "Despues de 2 semanas grabando procesos mineros en una mina de santiago, pude entrar al equipo de post produccion de una pelicula. El director Elias Llanos necesitaba correccion de color y post produccion para su pelicula de la isla de pascua.",
     images: [
-      "https://picsum.photos/seed/da2012a/400/300",
-      "https://picsum.photos/seed/da2012b/400/300",
-      "https://picsum.photos/seed/da2012c/400/300",
-      "https://picsum.photos/seed/da2012d/400/300",
+      "/editimage.png",
+      "/manutaraimage.jpeg",
     ],
   },
    {
@@ -29,10 +27,10 @@ const timelineData = [
     content:
       "Trabajar en cine hace que se abran puertas en publicidad. Motion graphics y post produccion para publicidad",
     images: [
-      "https://picsum.photos/seed/da2012a/400/300",
-      "https://picsum.photos/seed/da2012b/400/300",
-      "https://picsum.photos/seed/da2012c/400/300",
-      "https://picsum.photos/seed/da2012d/400/300",
+      "/aftereffectslogo.png",
+      "/flesadimage.png",
+       "/marcaslogos.png",
+      "/photoshoplogo.png",
     ],
   },
   {
@@ -41,10 +39,10 @@ const timelineData = [
     content:
       "El año 2021 es el punto de no retorno. En la informatica se veian cosas muy interesantes de las que desde hace mucho tiempo se venia hablando. Yo queria ser parte de todo eso. Abandone 10 años de experiencia como audiovisual por entender todo lo que se venia.",
     images: [
-      "https://picsum.photos/seed/da2012a/400/300",
-      "https://picsum.photos/seed/da2012b/400/300",
-      "https://picsum.photos/seed/da2012c/400/300",
-      "https://picsum.photos/seed/da2012d/400/300",
+      "/googleantigravity.png",
+      "/nanobananalogo.png",
+      "iaimage.png",
+      "/googlestudioailogo.png",
     ],
   },
   {
