@@ -174,7 +174,7 @@
 @media (max-width: 768px) {
   .timeline-view__hero {
     order: 1;
-    padding: 30px 20px 16px;
+    padding: 28px 20px 10px;
   }
 
   .timeline-view__title {
@@ -185,19 +185,18 @@
     font-size: 0.95rem;
   }
 
-  .timeline-view__content-section {
+  .timeline-view__slider-section {
     order: 2;
-    padding: 0 20px 24px;
-    flex: 1;
+    padding: 4px 16px 20px;
+    width: 100%;
+    border-top: none;
+    background: transparent;
   }
 
-  .timeline-view__slider-section {
+  .timeline-view__content-section {
     order: 3;
-    margin-top: auto;
-    padding: 20px 20px 36px;
-    border-top: 1px solid var(--color-divider);
-    background: var(--color-bg);
-    width: 100%;
+    padding: 0 20px 40px;
+    flex: 1;
   }
 
   .timeline-view__sparkle {
@@ -207,24 +206,24 @@
 
 @media (max-width: 480px) {
   .timeline-view__hero {
-    padding: 24px 16px 12px;
+    padding: 20px 16px 8px;
   }
 
   .timeline-view__title {
     font-size: 1.5rem;
   }
 
+  .timeline-view__slider-section {
+    padding: 4px 12px 16px;
+  }
+
   .timeline-view__year-badge {
-    font-size: 0.95rem;
-    padding: 6px 16px;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    padding: 5px 14px;
+    margin-bottom: 16px;
   }
 
   .timeline-view__content-section {
-    padding: 0 16px 20px;
-  }
-
-  .timeline-view__slider-section {
-    padding: 16px 16px 32px;
+    padding: 0 16px 30px;
   }
 }

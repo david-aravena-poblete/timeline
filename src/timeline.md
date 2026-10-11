@@ -9,21 +9,20 @@ Este documento contiene el desglose en 5 niveles metodológicos para el desarrol
 **Nivel 1: Requerimiento del Cliente**
 * Al mover el elemento hacia la derecha se avanza cronológicamente en la vida de David Aravena y al moverlo hacia la izquierda se retrocede a años anteriores.
 * Al cambiar de época en el timeline debe sincronizarse y desplazarse el contenido de forma animada.
-* **Comportamiento responsivo móvil:** En pantallas móviles, el timeline debe posicionarse en la parte inferior de la pantalla (reemplazando el pie de página de redes sociales, el cual se elimina por completo), permitiendo una interacción táctil cómoda y ergonómica.
-* En vista de escritorio, el timeline se mantiene en la sección superior para una lectura convencional.
+* **Ubicación del Timeline:** El timeline se sitúa en la parte superior de la vista (debajo de la cabecera y antes del contenido) tanto en escritorio como en dispositivos móviles, permitiendo una visibilidad inmediata al entrar a la pantalla.
+* **Eliminación de Redes Sociales:** No deben existir iconos de redes sociales ni pie de página redundante; la pantalla se enfoca exclusivamente en la experiencia del timeline.
 
 **Nivel 2: Especificación de Usuario**
 * Al arrastrar el indicador del timeline horizontal o hacer clic en cualquier año, la información y la galería se deslizan con fluidez al compás de la interacción.
-* En dispositivos móviles, los años deben verse claros, distribuidos equitativamente a todo lo ancho de la barra y con un tamaño legible (sin amontonarse en el centro), situados en la parte baja de la pantalla al alcance natural del pulgar.
+* Tanto en escritorio como en dispositivos móviles, los años se ubican en la parte superior, claramente distribuidos a todo lo ancho de la barra (`space-between`) y con un tamaño legible e interactivo.
 
 **Nivel 3: Especificación Técnica**
 * **Componente:** Se implementa el componente `TimelineSlider` que contiene un `<input type="range">` y una lista de años (`timeline-slider__years`).
 * **Estado:** El evento `onChange` del input y el evento `onClick` de cada etiqueta modifican el estado `selectedYear` (vía `useState`) ubicado en el componente padre `TimelineView`.
 * **Distribución de Años:** La lista de años utiliza Flexbox con `justify-content: space-between`, `width: 100%` y `flex-wrap: nowrap` para abarcar el ancho del slider de extremo a extremo sin comprimirse en ninguna resolución.
-* **Arquitectura de Maquetación Responsiva (Flex Order):**
-  * **Desktop:** Encabezado (`order: 1`) → Slider del Timeline (`order: 2`) → Contenido de la época (`order: 3`).
-  * **Mobile ($\le$ 768px):** Encabezado (`order: 1`) → Contenido de la época (`order: 2`, `flex: 1`) → Slider del Timeline (`order: 3`, `margin-top: auto` con `border-top: 1px solid var(--color-divider)`).
-* **Supresión de Redes Sociales:** No se renderizan iconos ni secciones de redes sociales; el pie de página es sustituido íntegramente por la barra de control del timeline en móviles.
+* **Arquitectura de Maquetación (Flex Order):**
+  * Encabezado (`order: 1`) → Slider del Timeline (`order: 2`) → Contenido de la época (`order: 3`).
+* **Supresión de Redes Sociales:** Se eliminó el componente `Footer` con las redes sociales para mantener una vista limpia y enfocada.
 
 **Nivel 4: Flujo**
 1. El usuario interactúa arrastrando el `<input type="range">` o pulsando una etiqueta de año en `TimelineSlider`.
