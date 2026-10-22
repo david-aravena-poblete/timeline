@@ -6,16 +6,10 @@ import './TimelineView.css';
 
 function TimelineView() {
   const years = useMemo(() => timelineData.map((era) => era.year), []);
-  const [selectedYear, setSelectedYear] = useState(years[0]);
+  const [position, setPosition] = useState(0);
 
-  const currentIndex = useMemo(() => {
-    const idx = years.indexOf(selectedYear);
-    return idx >= 0 ? idx : 0;
-  }, [years, selectedYear]);
-
-  function handleYearChange(nuevoAnio) {
-    setSelectedYear(nuevoAnio);
-  }
+  const currentIndex = Math.round(position);
+  const selectedYear = years[currentIndex];
 
   return (
     <div className="timeline-view">
@@ -29,8 +23,8 @@ function TimelineView() {
       <section className="timeline-view__slider-section" aria-label="Control del timeline">
         <TimelineSlider
           years={years}
-          selectedYear={selectedYear}
-          onYearChange={handleYearChange}
+          position={position}
+          onPositionChange={setPosition}
         />
       </section>
 
@@ -43,7 +37,7 @@ function TimelineView() {
         <div className="timeline-view__carousel">
           <div
             className="timeline-view__track"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            style={{ transform: `translateX(-${position * 100}%)` }}
           >
             {timelineData.map((era, index) => (
               <div
