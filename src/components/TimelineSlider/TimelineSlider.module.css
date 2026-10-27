@@ -1,0 +1,9 @@
+.timelineSlider { width: 100%; padding: 16px 0; }
+.years { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.yearItem { flex: 1; text-align: center; }
+.yearButton { appearance: none; border: 0; border-radius: var(--radius-xl, 16px); padding: 12px 8px; width: 100%; background: transparent; color: var(--color-text-secondary, #555); font: 600 1rem var(--font-heading, inherit); cursor: pointer; transition: background 0.2s, color 0.2s, transform 0.2s; }
+.yearButton:hover, .yearButton:focus-visible { color: var(--color-text-primary, #222); background: var(--color-bg-warm, #eee); }
+.yearButton:focus-visible { outline: 2px solid var(--color-accent, #b8956a); outline-offset: 2px; }
+.active { color: var(--color-bg-light, #fff); background: var(--color-text-primary, #222); transform: scale(1.04); }
+.active:hover, .active:focus-visible { color: var(--color-bg-light, #fff); background: var(--color-text-primary, #222); }
+@media (max-width: 480px) { .yearButton { padding: 10px 2px; font-size: 0.9rem; } .years { gap: 2px; } }
