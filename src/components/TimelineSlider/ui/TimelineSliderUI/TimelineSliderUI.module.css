@@ -1,0 +1,222 @@
+/* ===== Timeline Slider Container ===== */
+.timelineSlider {
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* ===== Custom Range Input ===== */
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 14px;
+  background: var(--color-slider-track);
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow var(--transition-fast);
+}
+
+.range:hover {
+  box-shadow: 0 0 20px rgba(44, 44, 44, 0.2);
+}
+
+.range:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+/* Webkit Thumb */
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  background: var(--color-slider-thumb);
+  border-radius: 50%;
+  border: 3px solid var(--color-bg);
+  cursor: grab;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition:
+    transform var(--transition-spring),
+    box-shadow var(--transition-fast);
+}
+
+.range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+.range::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+/* Firefox Thumb */
+.range::-moz-range-thumb {
+  width: 32px;
+  height: 32px;
+  background: var(--color-slider-thumb);
+  border-radius: 50%;
+  border: 3px solid var(--color-bg);
+  cursor: grab;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition:
+    transform var(--transition-spring),
+    box-shadow var(--transition-fast);
+}
+
+.range::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+.range::-moz-range-thumb:active {
+  cursor: grabbing;
+}
+
+/* Firefox Track */
+.range::-moz-range-track {
+  height: 14px;
+  background: var(--color-slider-track);
+  border-radius: 50px;
+  border: none;
+}
+
+/* ===== Year Labels ===== */
+.years {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0 0;
+  list-style: none;
+  user-select: none;
+}
+
+.year {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  position: relative;
+  padding: 4px 2px;
+}
+
+.year:hover {
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
+.yearActive {
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  transform: scale(1.05);
+}
+
+.yearActive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1.4);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .timelineSlider {
+    padding: 0 4px;
+  }
+
+  .years {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 14px 6px 0;
+  }
+
+  .year {
+    font-size: 0.95rem;
+    padding: 4px 4px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .yearActive {
+    font-size: 1.15rem;
+  }
+
+  .range {
+    height: 12px;
+  }
+
+  .range::-webkit-slider-thumb {
+    width: 28px;
+    height: 28px;
+  }
+
+  .range::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timelineSlider {
+    padding: 0;
+  }
+
+  .years {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 14px 4px 0;
+  }
+
+  .year {
+    font-size: 0.92rem;
+    padding: 4px 2px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .yearActive {
+    font-size: 1.1rem;
+  }
+}
