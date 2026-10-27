@@ -1,13 +1,229 @@
+/* ===== Timeline View Layout ===== */
 .timelineView {
-  min-height: 100vh;
-  width: min(1100px, 100%);
-  margin: 0 auto;
-  padding: 48px 32px;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  min-height: 100vh;
 }
 
+/* ===== Hero / Header Area ===== */
+.hero {
+  order: 1;
+  position: relative;
+  padding: 50px 0 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(184, 149, 106, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ===== Slider Section ===== */
+.sliderSection {
+  order: 2;
+  padding: 10px 0 40px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== Content Section ===== */
+.contentSection {
+  order: 3;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px 50px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ===== Carousel & Horizontal Slide Track ===== */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  transition: none;
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  opacity: 0.25;
+  transform: scale(0.97);
+  transition:
+    opacity 0.5s ease,
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.slideActive {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* ===== Year Badge ===== */
+.yearBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 8px 20px;
+  background: var(--color-text-primary);
+  color: var(--color-bg-light);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-medium);
+  transition: transform var(--transition-spring);
+  animation: badgePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.yearBadge:hover {
+  transform: scale(1.04);
+}
+
+.yearBadgeDot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ===== Decorative Sparkle ===== */
+.sparkle {
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.18;
+  pointer-events: none;
+  animation: sparkle-rotate 8s linear infinite;
+}
+
+.sparkle svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-accent);
+}
+
+@keyframes sparkle-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .timelineView { padding: 24px 16px; gap: 24px; }
+  .hero {
+    order: 1;
+    padding: 28px 20px 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .sliderSection {
+    order: 2;
+    padding: 4px 16px 20px;
+    width: 100%;
+    border-top: none;
+    background: transparent;
+  }
+
+  .contentSection {
+    order: 3;
+    padding: 0 20px 40px;
+    flex: 1;
+  }
+
+  .sparkle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 20px 16px 8px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .sliderSection {
+    padding: 4px 12px 16px;
+  }
+
+  .yearBadge {
+    font-size: 0.9rem;
+    padding: 5px 14px;
+    margin-bottom: 16px;
+  }
+
+  .contentSection {
+    padding: 0 16px 30px;
+  }
 }
