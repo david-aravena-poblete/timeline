@@ -1,21 +1,7 @@
-import EraContentUI from "./EraContentUI";
-
-export default function EraContent({ era }) {
-  if (!era) return null;
-
-  const {
-    year,
-    title,
-    description,
-    images = [],
-  } = era;
-
-  return (
-    <EraContentUI
-      year={year}
-      title={title}
-      description={description}
-      images={images}
-    />
-  );
+import { useState } from 'react';
+import EraContentUI from './EraContentUI';
+export default function EraContent({ datosEpoca }) {
+ const [loadedImages,setLoadedImages]=useState({});
+ const handleImageLoad=(index)=>setLoadedImages(prev=>({...prev,[index]:true}));
+ return <EraContentUI datosEpoca={datosEpoca} loadedImages={loadedImages} onImageLoad={handleImageLoad}/>;
 }
