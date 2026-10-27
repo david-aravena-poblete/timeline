@@ -1,0 +1,13 @@
+.timelineView {
+  min-height: 100vh;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .timelineView { padding: 24px 16px; gap: 24px; }
+}
