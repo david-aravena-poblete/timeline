@@ -1,45 +1,10 @@
-import TimelineSliderUI from "./TimelineSliderUI";
-
-export default function TimelineSlider({
-  eras,
-  activeIndex,
-  onSelectEra,
-  onNextEra,
-  onPreviousEra,
-}) {
-  // Métodos handle: capturan y validan eventos.
-
-  const handleSelectEra = (index) => {
-    if (!Number.isInteger(index)) return;
-
-    if (index < 0 || index >= eras.length) return;
-
-    onSelectEra(index);
-  };
-
-  const handleKeyDown = (event) => {
-    switch (event.key) {
-      case "ArrowRight":
-        event.preventDefault();
-        onNextEra();
-        break;
-
-      case "ArrowLeft":
-        event.preventDefault();
-        onPreviousEra();
-        break;
-
-      default:
-        break;
-    }
-  };
-
-  return (
-    <TimelineSliderUI
-      eras={eras}
-      activeIndex={activeIndex}
-      onSelectEra={handleSelectEra}
-      onKeyDown={handleKeyDown}
-    />
-  );
+import TimelineSliderUI from './TimelineSliderUI';
+import getSelectedIndex from './utils/getSelectedIndex';
+import getYearIndex from './utils/getYearIndex';
+export default function TimelineSlider({years,position,onPositionChange}) {
+ const selectedYear=years[getSelectedIndex(position)];
+ const handleYearChange=(event)=>onPositionChange(Number(event.target.value));
+ const handleYearClick=(year)=>onPositionChange(getYearIndex(years,year));
+ const handleYearKeyDown=(event,year)=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();handleYearClick(year);}};
+ return <TimelineSliderUI years={years} position={position} selectedYear={selectedYear} onYearChange={handleYearChange} onYearClick={handleYearClick} onYearKeyDown={handleYearKeyDown}/>;
 }
